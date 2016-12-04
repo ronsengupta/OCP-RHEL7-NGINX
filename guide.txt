@@ -1,0 +1,8 @@
+$ openssl req -x509 -newkey rsa:2048 -nodes -keyout destca.key -sha256 -days 1024 -out destca.crt -subj "/C=US/ST=Texas/L=Austin/O=Global Sec/OU=IT/CN=rootca2"
+$openssl req -newkey rsa:2048 -keyout $CN.rhel-cdk.10.1.2.2.xip.io.key -out $CN.rhel-cdk.10.1.2.2.xip.io.csr -nodes -subj "/C=US/ST=Texas/L=Austin/O=Global Security/OU=IT Department/CN=$CN.rhel-cdk.10.1.2.2.xip.io"
+
+Here CN is $CN.rhel-cdk.10.1.2.2.xip.io
+
+
+
+$scp -P 2222 vagrant@127.0.0.1:/home/vagrant/nginxrhelcliencert/ssl/* .
